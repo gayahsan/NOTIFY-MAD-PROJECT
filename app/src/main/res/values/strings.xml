@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">NOTIFY MAD Project</string>
+    <string name="noteify">Noteify</string>
+    <string name="hello_user">Hello User!</string>
+    <string name="lorem_ipsum">Lorem Ipsum</string>
+    <string name="settings">settings</string>
 </resources>

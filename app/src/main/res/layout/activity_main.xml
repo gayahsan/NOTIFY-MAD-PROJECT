@@ -43,12 +43,12 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
         android:background="@android:color/transparent"
+        android:contentDescription="@string/settings"
         android:src="@drawable/settings"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.9"
         app:layout_constraintStart_toEndOf="@+id/appTitle"
-        app:layout_constraintTop_toTopOf="parent"
-        android:contentDescription="@string/desc"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/txtNotesButton"
@@ -57,7 +57,7 @@
         android:layout_marginTop="56dp"
         android:background="@drawable/box"
         android:elevation="2dp"
-        android:text="@string/textview"
+        android:text="@string/lorem_ipsum"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.491"
