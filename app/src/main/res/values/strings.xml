@@ -6,4 +6,7 @@
     <string name="settings">settings</string>
     <string name="button_card">button_card</string>
     <string name="btn_notepad">Notepad</string>
+    <string name="btn_to_do_list">To-do List</string>
+    <string name="reminder">reminder</string>
+    <string name="btn_profile">profile</string>
 </resources>
