@@ -2,6 +2,17 @@
     <string name="app_name">NOTIFY MAD Project</string>
     <string name="noteify">Noteify</string>
     <string name="hello_user">Hello User!</string>
-    <string name="lorem_ipsum">Lorem Ipsum</string>
+    <string name="lorem_ipsum">Lorem Ipsum dolor sit amet</string>
     <string name="settings">settings</string>
+    <string name="button_card">button_card</string>
+    <string name="btn_notepad">Notepad</string>
+    <string name="btn_to_do_list">To-do List</string>
+    <string name="reminder">reminder</string>
+    <string name="btn_profile">profile</string>
+    <string name="txt_notes_card">Take Your Notes Here</string>
+    <string name="txt_notes_ret">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
+    <string name="txt_todo_ret">Take Your TO-DOs Here</string>
+    <string name="txt_reminder_card">Take Your Reminders Here</string>
+    <string name="txt_profiles_card">Profiles</string>
+    <string name="txt_profiles_desc">Profiles are like contacts in your phone. But works as a separate contact list</string>
 </resources>
