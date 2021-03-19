@@ -12,4 +12,7 @@
     <string name="txt_notes_card">Take Your Notes Here</string>
     <string name="txt_notes_ret">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
     <string name="txt_todo_ret">Take Your TO-DOs Here</string>
+    <string name="txt_reminder_card">Take Your Reminders Here</string>
+    <string name="txt_profiles_card">Profiles</string>
+    <string name="txt_profiles_desc">Profiles are like contacts in your phone. But works as a separate contact list</string>
 </resources>
