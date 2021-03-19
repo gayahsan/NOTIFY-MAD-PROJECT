@@ -29,7 +29,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void intentToNotepad(View view) {
-        Intent intenToNotes = new Intent(this, NotepadHome.class);
-        startActivity(intenToNotes);
+        Intent intentToNotes = new Intent(this, NotepadHome.class);
+        startActivity(intentToNotes);
+    }
+
+    public void intentToProfile(View view) {
+        Intent intentToProfile = new Intent(this, profileHome.class);
+        startActivity(intentToProfile);
     }
 }

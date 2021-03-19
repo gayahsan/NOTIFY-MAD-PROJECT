@@ -15,4 +15,5 @@
     <string name="txt_reminder_card">Take Your Reminders Here</string>
     <string name="txt_profiles_card">Profiles</string>
     <string name="txt_profiles_desc">Profiles are like contacts in your phone. But works as a separate contact list</string>
+    <string name="profileTopic">Profile</string>
 </resources>
