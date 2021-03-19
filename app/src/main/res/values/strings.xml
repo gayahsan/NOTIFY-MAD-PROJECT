@@ -25,4 +25,15 @@
     <string name="todo2">todo2</string>
     <string name="todo3">todo3</string>
     <string name="todo4">todo4</string>
+    <string name="todo_03">Todo 01</string>
+    <string name="todo_list1">ToDo List</string>
+    <string name="date_20_03_2021">Date 20/03/2021</string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur_adipiscin_elit">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur_adipiscig_elit">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
+    <string name="date_18_03_2021">Date 20/03/2021</string>
+    <string name="todo_02">Todo 01</string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur_adipising_elit">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
+    <string name="todo_04">Todo 01</string>
+    <string name="date_19_03_2021">Date 20/03/2021</string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur_adiiscig_elit">lorem_ipsum_dolor_sit_amet_consectetur_adiiscig_elit</string>
 </resources>
