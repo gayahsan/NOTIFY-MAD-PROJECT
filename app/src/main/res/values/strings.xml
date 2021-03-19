@@ -18,4 +18,6 @@
     <string name="profileTopic">Profile</string>
     <string name="app_sub_reminder">Reminder</string>
     <string name="card_long">card_long</string>
+    <string name="ToDo_List">ToDo_List</string>
+    <string name="todo1">todo1</string>
 </resources>

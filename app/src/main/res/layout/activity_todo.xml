@@ -21,21 +21,21 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <TextView
-            android:id="@+id/appSubTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="4dp"
-            android:fontFamily="@font/light"
-            android:includeFontPadding="false"
-            android:text="@string/hello_user"
-            android:textColor="@color/white"
-            android:textSize="18sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appTitle" />
+    <TextView
+        android:id="@+id/appSubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/light"
+        android:includeFontPadding="false"
+        android:text="@string/ToDo_List"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appTitle" />
 
         <ImageButton
             android:id="@+id/btnSettings"
@@ -50,56 +50,16 @@
             app:layout_constraintStart_toEndOf="@+id/appTitle"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <ImageView
-            android:id="@+id/button_card"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:contentDescription="@string/button_card"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/appSubTitle"
-            app:srcCompat="@drawable/card_01" />
-
-        <ImageView
-            android:id="@+id/button_card2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:contentDescription="@string/button_card"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/button_card"
-            app:srcCompat="@drawable/card_01" />
-
-    <Button
-            android:id="@+id/btnNotepad"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="266dp"
-            android:layout_marginTop="73dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="30dp"
-            android:text="@string/btn_notepad"
-            app:layout_constraintBottom_toBottomOf="@+id/button_card"
-            app:layout_constraintEnd_toEndOf="@+id/button_card"
-            app:layout_constraintHorizontal_bias="1.0"
-            app:layout_constraintStart_toStartOf="@+id/button_card"
-            app:layout_constraintTop_toTopOf="@+id/button_card"
-            app:layout_constraintVertical_bias="1.0" />
-
-        <Button
-            android:id="@+id/btnTodoList"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="243dp"
-            android:layout_marginTop="73dp"
-            android:layout_marginEnd="32dp"
-            android:layout_marginBottom="30dp"
-            android:text="@string/btn_to_do_list"
-            app:layout_constraintBottom_toBottomOf="@+id/button_card2"
-            app:layout_constraintEnd_toEndOf="@+id/button_card2"
-            app:layout_constraintStart_toStartOf="@+id/button_card2"
-            app:layout_constraintTop_toTopOf="@+id/button_card2" />
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:contentDescription="@string/todo1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/card_long" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
