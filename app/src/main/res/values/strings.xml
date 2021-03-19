@@ -20,4 +20,9 @@
     <string name="card_long">card_long</string>
     <string name="ToDo_List">ToDo_List</string>
     <string name="todo1">todo1</string>
+    <string name="ToDo_img1">ToDo_img1</string>
+    <string name="ToDo_btn1">ToDo_btn1</string>
+    <string name="todo2">todo2</string>
+    <string name="todo3">todo3</string>
+    <string name="todo4">todo4</string>
 </resources>
