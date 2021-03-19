@@ -17,4 +17,5 @@
     <string name="txt_profiles_desc">Profiles are like contacts in your phone. But works as a separate contact list</string>
     <string name="profileTopic">Profile</string>
     <string name="app_sub_reminder">Reminder</string>
+    <string name="card_long">card_long</string>
 </resources>
