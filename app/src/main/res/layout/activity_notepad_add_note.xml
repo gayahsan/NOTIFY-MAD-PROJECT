@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background"
+    tools:context=".NotepadAddNote">
+
+    <ImageView
+        android:id="@+id/card_long2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="110dp"
+        android:contentDescription="@string/card_long"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/card_long" />
+
+    <TextView
+        android:id="@+id/appTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/main"
+        android:includeFontPadding="false"
+        android:text="@string/noteify"
+        android:textColor="@color/white"
+        android:textSize="34sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/txtNoteTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="188dp"
+        android:background="#00FFFFFF"
+        android:fontFamily="@font/main"
+        android:hint="@string/note_title"
+        android:importantForAutofill="no"
+        android:includeFontPadding="false"
+        android:inputType="textShortMessage|text"
+        android:labelFor="@id/txtNoteField"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/card_long2"
+        app:layout_constraintTop_toTopOf="@+id/card_long2"
+        tools:ignore="LabelFor" />
+
+    <TextView
+        android:id="@+id/appSubTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/light"
+        android:includeFontPadding="false"
+        android:text="@string/btn_notepad"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/appTitle" />
+
+    <EditText
+        android:id="@+id/txtNoteField"
+        android:layout_width="310dp"
+        android:layout_height="310dp"
+        android:layout_marginTop="4dp"
+        android:background="#00FFFFFF"
+        android:ems="10"
+        android:fontFamily="@font/light"
+        android:gravity="start|top"
+        android:hint="@string/notepad_txt_field"
+        android:importantForAutofill="no"
+        android:inputType="textShortMessage|textLongMessage|textMultiLine|text"
+        android:justificationMode="inter_word"
+        android:labelFor="@id/txtNoteTitle"
+        android:textColor="@color/gray"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/card_long2"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="@+id/card_long2"
+        app:layout_constraintTop_toBottomOf="@+id/txtNoteTitle"
+        tools:ignore="LabelFor"/>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:contentDescription="@string/notepad_background_image"
+        app:layout_constraintEnd_toEndOf="@+id/card_long2"
+        app:layout_constraintStart_toStartOf="@+id/card_long2"
+        app:layout_constraintTop_toTopOf="@+id/card_long2"
+        app:srcCompat="@drawable/notes_background_pic" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
