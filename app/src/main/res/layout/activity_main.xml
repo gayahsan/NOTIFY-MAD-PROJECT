@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:background="@drawable/background">
+    android:background="@drawable/background"
+    tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/appTitle"
@@ -17,7 +17,7 @@
         android:includeFontPadding="false"
         android:text="@string/noteify"
         android:textColor="@color/white"
-        android:textSize="32sp"
+        android:textSize="34sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -31,7 +31,7 @@
         android:includeFontPadding="false"
         android:text="@string/hello_user"
         android:textColor="@color/white"
-        android:textSize="18sp"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -95,60 +95,114 @@
         android:id="@+id/btnNotepad"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="266dp"
-        android:layout_marginTop="73dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="268dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/light"
         android:text="@string/btn_notepad"
-        app:layout_constraintBottom_toBottomOf="@+id/button_card"
-        app:layout_constraintEnd_toEndOf="@+id/button_card"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:cornerRadius="20dp"
         app:layout_constraintStart_toStartOf="@+id/button_card"
-        app:layout_constraintTop_toTopOf="@+id/button_card"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/button_card" />
 
     <Button
         android:id="@+id/btnTodoList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="243dp"
-        android:layout_marginTop="73dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="256dp"
+        android:layout_marginTop="76dp"
+        android:fontFamily="@font/light"
+        android:onClick="intentTodo"
         android:text="@string/btn_to_do_list"
-        app:layout_constraintBottom_toBottomOf="@+id/button_card2"
-        app:layout_constraintEnd_toEndOf="@+id/button_card2"
+        app:cornerRadius="20dp"
         app:layout_constraintStart_toStartOf="@+id/button_card2"
         app:layout_constraintTop_toTopOf="@+id/button_card2" />
 
     <Button
-        android:id="@+id/btnNotepad3"
+        android:id="@+id/btnReminder"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="251dp"
-        android:layout_marginTop="69dp"
-        android:layout_marginEnd="31dp"
-        android:layout_marginBottom="34dp"
+        android:layout_marginStart="260dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/light"
         android:text="@string/reminder"
-        app:layout_constraintBottom_toBottomOf="@+id/button_card3"
-        app:layout_constraintEnd_toEndOf="@+id/button_card3"
-        app:layout_constraintHorizontal_bias="1.0"
+        app:cornerRadius="20dp"
         app:layout_constraintStart_toStartOf="@+id/button_card3"
-        app:layout_constraintTop_toTopOf="@+id/button_card3"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintTop_toTopOf="@+id/button_card3" />
 
     <Button
         android:id="@+id/btn_profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="264dp"
-        android:layout_marginTop="72dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginBottom="31dp"
+        android:layout_marginStart="276dp"
+        android:layout_marginTop="80dp"
+        android:fontFamily="@font/light"
         android:text="@string/btn_profile"
-        app:layout_constraintBottom_toBottomOf="@+id/button_card4"
-        app:layout_constraintEnd_toEndOf="@+id/button_card4"
+        app:cornerRadius="20dp"
         app:layout_constraintStart_toStartOf="@+id/button_card4"
         app:layout_constraintTop_toTopOf="@+id/button_card4" />
+
+    <TextView
+        android:id="@+id/txtNoteView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="39dp"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/main"
+        android:text="@string/txt_notes_card"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/button_card"
+        app:layout_constraintTop_toTopOf="@+id/button_card" />
+
+    <TextView
+        android:id="@+id/txtTodoView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/main"
+        android:text="@string/txt_todo_ret"
+        android:textSize="24sp"
+        app:layout_constraintStart_toStartOf="@+id/button_card2"
+        app:layout_constraintTop_toTopOf="@+id/button_card2" />
+
+    <TextView
+        android:id="@+id/txtNotesRet"
+        android:layout_width="200dp"
+        android:layout_height="67dp"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="60dp"
+        android:fontFamily="@font/light"
+        android:justificationMode="inter_word"
+        android:text="@string/txt_notes_ret"
+        android:textSize="14sp"
+        app:layout_constraintStart_toStartOf="@+id/button_card"
+        app:layout_constraintTop_toTopOf="@+id/button_card" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:checked="false"
+        android:clickable="false"
+        android:fontFamily="@font/light"
+        android:text="@string/lorem_ipsum"
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toStartOf="@+id/button_card2"
+        app:layout_constraintTop_toBottomOf="@+id/txtTodoView"
+        app:useMaterialThemeColors="false" />
+
+    <CheckBox
+        android:id="@+id/checkBox2"
+        android:layout_width="200dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:clickable="false"
+        android:fontFamily="@font/light"
+        android:text="@string/lorem_ipsum"
+        android:textColor="@color/gray"
+        app:layout_constraintStart_toStartOf="@+id/button_card2"
+        app:layout_constraintTop_toBottomOf="@+id/txtTodoView"
+        app:useMaterialThemeColors="false" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
