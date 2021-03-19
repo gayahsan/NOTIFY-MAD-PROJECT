@@ -18,4 +18,17 @@
     <string name="profileTopic">Profile</string>
     <string name="app_sub_reminder">Reminder</string>
     <string name="card_long">card_long</string>
+    <string name="your_reminders">Your Reminders</string>
+    <string name="reminder_01">Reminder 01</string>
+    <string name="rem2date_03_14_2021">Date 03/14/2021</string>
+    <string name="rem1lorem_ipsum_dolor_sit_amet_consectetur">Lorem ipsum dolor sit amet, consectetur</string>
+    <string name="reminder_02">Reminder 02</string>
+    <string name="rem2ndate_03_14_2021">Date 03/14/2021</string>
+    <string name="rem2lorem_ipsum_dolor_sit_amet_consectetur">Lorem ipsum dolor sit amet, consectetur</string>
+    <string name="reminder_03">Reminder 03</string>
+    <string name="rem3date_03_14_2021">Date 03/14/2021</string>
+    <string name="rem3lorem_ipsum_dolor_sit_amet_consectetur">Lorem ipsum dolor sit amet, consectetur</string>
+    <string name="rem_pic"></string>
+    <string name="reminder_float"></string>
+    <string name="rem_prof"></string>
 </resources>
