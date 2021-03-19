@@ -37,4 +37,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intentToProfile = new Intent(this, profileHome.class);
         startActivity(intentToProfile);
     }
+
+    public void intentToReminder(View view) {
+        Intent intentToReminder = new Intent(this, ActivityReminder_01.class);
+        startActivity(intentToReminder);
+    }
 }
