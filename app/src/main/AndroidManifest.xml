@@ -10,11 +10,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NOTIFYMADProject">
-        <activity android:name=".ActivityReminder_01"/>
-        <activity android:name=".profileHome"/>
+        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".ProfileDisplay" />
+        <activity android:name=".ActivityReminder_01" />
+        <activity android:name=".profileHome" />
         <activity android:name=".NotepadHome" />
         <activity android:name=".Todo" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".profileEdit">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
