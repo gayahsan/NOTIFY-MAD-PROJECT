@@ -103,34 +103,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/titlef"
         android:inputType="textPersonName"
+        android:text="Reminder 01"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView12"
-        app:layout_constraintStart_toEndOf="@+id/textView12"
-        android:autofillHints="" />
+        app:layout_constraintStart_toEndOf="@+id/textView12" />
 
     <EditText
         android:id="@+id/editTextDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/datef"
         android:inputType="date"
+        android:text="03/14/2021"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName"
-        android:autofillHints="" />
+        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName" />
 
     <EditText
         android:id="@+id/editTextTime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autofillHints=""
         android:ems="10"
         android:hint="@string/timef"
         android:inputType="time"
+        android:text="12:00 PM"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView14"
-        app:layout_constraintStart_toStartOf="@+id/editTextDate"
-        android:autofillHints="" />
+        app:layout_constraintStart_toStartOf="@+id/editTextDate" />
 
     <ImageView
         android:id="@+id/imageView6"
