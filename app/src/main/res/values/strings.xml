@@ -18,10 +18,4 @@
     <string name="profileTopic">Profile</string>
     <string name="app_sub_reminder">Reminder</string>
     <string name="card_long">card_long</string>
-    <string name="add_new_note">add_new_note</string>
-    <string name="new_note_title">Title</string>
-    <string name="txt_note_field">Add your text here</string>
-    <string name="note_title">Enter Title</string>
-    <string name="notepad_background_image">notepad_background_image</string>
-    <string name="notepad_txt_field">Enter your note here</string>
 </resources>
