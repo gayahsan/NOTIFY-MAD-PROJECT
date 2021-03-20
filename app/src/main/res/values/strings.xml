@@ -16,6 +16,45 @@
     <string name="txt_profiles_card">Profiles</string>
     <string name="txt_profiles_desc">Profiles are like contacts in your phone. But works as a separate contact list</string>
     <string name="profileTopic">Profile</string>
+
+<!--    Strings for profile activity-->
+    <string name="profile_home_01">Profile Home</string>
+    <string name="profile_disply01">Profile Display</string>
+    <string name="profile_disply_02">Profile Display</string>
+    <string name="profile_disply_03">Profile Display</string>
+    <string name="profile_01_in_home">Profile 01</string>
+    <string name="profile_02_home">Profile 02</string>
+    <string name="profile_03_home">Profile 03</string>
+    <string name="profile_home_1">Profile 01</string>
+    <string name="plussine">Plus Sign</string>
+    <string name="profile01">Profile 01</string>
+    <string name="profile_01_home_01">Profile 01</string>
+    <string name="profile_01_home_05">Profile 01</string>
+    <string name="_9477_xxx_xx_xxx">9477 xxx xx xxx</string>
+    <string name="profile_01_home_06">Profile 01</string>
+    <string name="n_g_k_nawagmuwa">N. G. K. Nawagamuwa</string>
+    <string name="profile_01_home_07">Profile 01</string>
+    <string name="profile_01_home_010">Profile 01</string>
+    <string name="profile_02">Profile 02</string>
+    <string name="profile_01_home_08">Profile 01</string>
+    <string name="profile_01_home_011">Profile 01</string>
+    <string name="profile_01_home_012">Profile 01</string>
+    <string name="profile_01">Profile 01</string>
+    <string name="profile_01_home_013">Profile 01</string>
+    <string name="profile_01_home_014">Profile 01</string>
+    <string name="profile_03">Profile 03</string>
+    <string name="profile_01_home_016">Profile 01</string>
+    <string name="profile_01_home_017">Profile 01</string>
+
     <string name="app_sub_reminder">Reminder</string>
     <string name="card_long">card_long</string>
+    <string name="note_title">Enter note title</string>
+    <string name="notepad_background_image">Notepad Background Image</string>
+    <string name="add_new_note">Add New Note</string>
+    <string name="txt_note_desc">Enter note description</string>
+    <string name="txt_profile_name">Profile Name</string>
+    <string name="txt_profile_description">Profile description</string>
+    <string name="img_profile">Profile Image</string>
+    <string name="lbl_profile_desc">Description:</string>
+    <string name="lbl_profile_phone">Phone:</string>
 </resources>

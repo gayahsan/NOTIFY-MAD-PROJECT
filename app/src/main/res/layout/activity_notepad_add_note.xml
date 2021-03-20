@@ -76,7 +76,7 @@
         android:ems="10"
         android:fontFamily="@font/light"
         android:gravity="start|top"
-        android:hint="@string/notepad_txt_field"
+        android:hint="@string/txt_note_desc"
         android:importantForAutofill="no"
         android:inputType="textShortMessage|textLongMessage|textMultiLine|text"
         android:justificationMode="inter_word"
@@ -87,7 +87,7 @@
         app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="@+id/card_long2"
         app:layout_constraintTop_toBottomOf="@+id/txtNoteTitle"
-        tools:ignore="LabelFor"/>
+        tools:ignore="LabelFor" />
 
     <ImageView
         android:id="@+id/imageView"
