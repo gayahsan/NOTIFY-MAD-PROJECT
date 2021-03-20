@@ -36,4 +36,9 @@
     <string name="todo_04">Todo 01</string>
     <string name="date_19_03_2021">Date 20/03/2021</string>
     <string name="lorem_ipsum_dolor_sit_amet_consectetur_adiiscig_elit">lorem_ipsum_dolor_sit_amet_consectetur_adiiscig_elit</string>
+    <string name="enter_title1">Enter Title</string>
+    <string name="checkbox1">CheckBox</string>
+    <string name="add_text">Add_text</string>
+    <string name="add_tex">Add text.....</string>
+    <string name="todo">TODO</string>
 </resources>
