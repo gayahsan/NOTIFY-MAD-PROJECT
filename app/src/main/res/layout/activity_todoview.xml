@@ -5,8 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/background"
-    tools:context=".Todo">
-
+    tools:context=".activity_todoview">
     <TextView
         android:id="@+id/appTitle"
         android:layout_width="wrap_content"
@@ -77,71 +76,56 @@
         app:srcCompat="@android:drawable/ic_input_add" />
 
     <ImageView
-        android:id="@+id/imageView4"
-        android:layout_width="109dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="20dp"
-        android:contentDescription="@string/ToDo_img1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView"
-        app:srcCompat="@drawable/group_14" />
-
-    <ImageView
         android:id="@+id/imageView5"
         android:layout_width="389dp"
         android:layout_height="141dp"
-        android:layout_marginTop="8dp"
         android:contentDescription="@string/todo2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
+        app:layout_constraintHorizontal_bias="0.545"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
         app:srcCompat="@drawable/card_01" />
 
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="389dp"
         android:layout_height="141dp"
-        android:layout_marginTop="280dp"
-        android:contentDescription="@string/todo3"
+        android:layout_marginTop="132dp"
+        android:contentDescription="@string/todo2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView5"
         app:srcCompat="@drawable/card_01" />
 
     <ImageView
         android:id="@+id/imageView7"
         android:layout_width="389dp"
         android:layout_height="141dp"
-        android:layout_marginTop="145dp"
+        android:layout_marginTop="272dp"
         android:contentDescription="@string/todo4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.25"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
         app:srcCompat="@drawable/card_01" />
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/main"
-        android:text="@string/todo_list1"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView5"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="389dp"
+        android:layout_height="141dp"
+        android:layout_marginTop="20dp"
+        android:contentDescription="@string/todo4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.088"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintHorizontal_bias="0.454"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox5"
+        app:srcCompat="@drawable/card_01" />
 
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:text="@string/todo_03"
+        android:text="@string/todo1"
         android:textColor="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.152"
@@ -176,7 +160,7 @@
         android:layout_width="276dp"
         android:layout_height="38dp"
         android:layout_marginTop="140dp"
-        android:text="@string/lorem_ipsum_dolor_sit_amet_consectetur_adipiscin_elit"
+        android:text="@string/lorem_ipsum_dolor_sit_amet_consectetur_adiiscig_elit"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
@@ -201,7 +185,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="160dp"
-        android:text="@string/todo_02"
+        android:text="@string/todo2"
         android:textColor="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.152"
@@ -213,7 +197,7 @@
         android:layout_width="276dp"
         android:layout_height="38dp"
         android:layout_marginTop="276dp"
-        android:text="@string/lorem_ipsum_dolor_sit_amet_consectetur_adipising_elit"
+        android:text="@string/lorem_ipsum_dolor_sit_amet_consectetur_adipiscin_elit"
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.444"
@@ -225,7 +209,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="296dp"
-        android:text="@string/todo_03"
+        android:text="@string/todo3"
         android:textColor="@color/gray"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.152"
@@ -242,6 +226,43 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <CheckBox
+        android:id="@+id/checkBox6"
+        android:layout_width="276dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="404dp"
+        android:text="@string/lorem_ipsum_dolor_sit_amet_consectetur_adipising_elit"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.444"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="424dp"
+        android:text="@string/todo4"
+        android:textColor="@color/gray"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.152"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView5" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="404dp"
+        android:text="@string/date_20_03_2021"
+        android:textColor="@color/gray"
+        android:textSize="12sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.166"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
 

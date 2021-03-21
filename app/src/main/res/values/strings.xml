@@ -57,4 +57,27 @@
     <string name="img_profile">Profile Image</string>
     <string name="lbl_profile_desc">Description:</string>
     <string name="lbl_profile_phone">Phone:</string>
+    <string name="ToDo_List">ToDo_List</string>
+    <string name="todo1">todo1</string>
+    <string name="ToDo_img1">ToDo_img1</string>
+    <string name="ToDo_btn1">ToDo_btn1</string>
+    <string name="todo2">todo2</string>
+    <string name="todo3">todo3</string>
+    <string name="todo4">todo4</string>
+    <string name="todo_03">Todo 01</string>
+    <string name="todo_list1">ToDo List</string>
+    <string name="date_20_03_2021">Date 20/03/2021</string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur_adipiscin_elit">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur_adipiscig_elit">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
+    <string name="date_18_03_2021">Date 20/03/2021</string>
+    <string name="todo_02">Todo 01</string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur_adipising_elit">Lorem ipsum dolor sit amet, consectetur adipiscing elit</string>
+    <string name="todo_04">Todo 01</string>
+    <string name="date_19_03_2021">Date 20/03/2021</string>
+    <string name="lorem_ipsum_dolor_sit_amet_consectetur_adiiscig_elit">lorem_ipsum_dolor_sit_amet_consectetur_adiiscig_elit</string>
+    <string name="enter_title1">Enter Title</string>
+    <string name="checkbox1">CheckBox</string>
+    <string name="add_text">Add_text</string>
+    <string name="add_tex">Add text.....</string>
+    <string name="todo">TODO</string>
 </resources>
