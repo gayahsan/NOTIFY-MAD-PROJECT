@@ -107,7 +107,7 @@
         android:ems="10"
         android:hint="@string/titlef"
         android:inputType="textPersonName"
-        android:text="@string/reminder_01"
+        android:text="@string/reminder_01_update"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView12"
         app:layout_constraintStart_toEndOf="@+id/textView12" />
 

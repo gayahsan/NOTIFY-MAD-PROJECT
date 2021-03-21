@@ -40,7 +40,7 @@
     <string name="timef">Time</string>
     <string name="update_reminder">Update Reminder</string>
     <string name="remcheck">remcheck</string>
-    <string name="reminder_01">Reminder 01</string>
     <string name="_03_14_2021">03/14/2021</string>
     <string name="_12_00_pm">12:00 PM</string>
+    <string name="reminder_01_update">Reminder 01</string>
 </resources>
