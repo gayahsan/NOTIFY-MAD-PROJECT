@@ -5,14 +5,100 @@
     <string name="lorem_ipsum">Lorem Ipsum dolor sit amet</string>
     <string name="settings">settings</string>
     <string name="button_card">button_card</string>
-    <string name="btn_notepad">Notepad</string>
     <string name="btn_to_do_list">To-do List</string>
     <string name="reminder">reminder</string>
     <string name="btn_profile">profile</string>
+
+    <!--Strings for notepad-->
+    <string name="note_title">Enter note title</string>
+    <string name="txt_note_desc">Enter note description</string>
+    <string name="notepad_background_image">notepad back</string>
+    <string name="add_new_note">Add a new note</string>
     <string name="txt_notes_card">Take Your Notes Here</string>
     <string name="txt_notes_ret">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
-    <string name="txt_todo_ret">Take Your TO-DOs Here</string>
-    <string name="txt_reminder_card">Take Your Reminders Here</string>
+    <string name="btn_notepad">Notepad</string>
+
+    <!--String values for ToDoList-->
+    <string name="ToDo_List">ToDo List</string>
+    <string name="todo">ToDo 01</string>
+    <string name="date_20_03_2021">20/03/2021</string>
+    <string name="todo_02">ToDo 02</string>
+    <string name="todo_03">ToDo 03</string>
+    <string name="todo1">ToDo 01</string>
+    <string name="ToDo_btn1">Todo button</string>
+    <string name="ToDo_img1">todo image</string>
+    <string name="todo2">ToDo 02</string>
+    <string name="todo3">ToDo 03</string>
+    <string name="todo4">ToDo 04</string>
+    <string name="enter_title1">Enter ToDo name</string>
+    <string name="add_tex">Add text</string>
+
+    <!--String values for profile-->
     <string name="txt_profiles_card">Profiles</string>
     <string name="txt_profiles_desc">Profiles are like contacts in your phone. But works as a separate contact list</string>
+    <string name="profileTopic">Profile</string>
+    <string name="txt_profile_name">Profile name goes here!</string>
+    <string name="txt_profile_description">Profile description goes here</string>
+    <string name="img_profile">profile image</string>
+    <string name="lbl_profile_phone">Phone number:</string>
+
+
+    <string name="txt_todo_ret">Take Your TO-DOs Here</string>
+
+    <!--String values for reminder-->
+    <string name="txt_reminder_card">Take Your Reminders Here</string>
+    <string name="app_sub_reminder">Reminder</string>
+    <string name="reminder_float">reminder fab</string>
+    <string name="rem_pic">reminder picture</string>
+    <string name="your_reminders">Your reminders</string>
+    <string name="reminder_01">Reminder 01</string>
+    <string name="rem2date_03_14_2021">03/14/2021</string>
+    <string name="reminder_02">Reminder 02</string>
+    <string name="rem2ndate_03_14_2021">03/14/2021</string>
+    <string name="reminder_03">Reminder 03</string>
+    <string name="add_a_new_reminder">Add a new reminder</string>
+    <string name="title">Title</string>
+    <string name="date">Date</string>
+    <string name="time">Time</string>
+    <string name="remcheck">reminder checkbox</string>
+    <string name="update_reminder">Update reminder</string>
+
+
+    <string name="card_long">card_long</string>
+    <string name="profile_home_01">profile_home_01</string>
+    <string name="profile_01_in_home">profile_01</string>
+    <string name="profile_02_home">profile_02_home</string>
+    <string name="profile_03_home">profile_03_home</string>
+    <string name="profile_home_1">profile_home_1</string>
+    <string name="plussine">plussine</string>
+    <string name="profile01">profile01_</string>
+    <string name="profile_01_home_01">profile_01_home_01</string>
+    <string name="profile_01_home_02">profile_01_home_02</string>
+    <string name="profile_01_home_03">profile_01_home_03</string>
+    <string name="profile_01_home_04">profile_01_home_04</string>
+    <string name="profile_01_home_05">profile_01_home_05</string>
+    <string name="_9477_xxx_xx_xx">+9477 xxx xx xxx</string>
+    <string name="profile_01_home_06">profile_01_home_06</string>
+    <string name="n_g_k_nawagmuwa">N.G.K.Nawagmuwa</string>
+    <string name="profile_01_hom2e_07">profile_01_home_07</string>
+    <string name="profile_01_home_07">profile_01_home_07</string>
+    <string name="_9477_xxx_xx_xxx">+9477 xxx xx xxx</string>
+    <string name="profile_01_home_010">profile_01_home_010</string>
+    <string name="profile_02">Profile 02</string>
+    <string name="profile_01_home_08">Profile 01</string>
+    <string name="profile_01_home_011">Profile 01</string>
+    <string name="profile_01_home_012">Profile 01</string>
+    <string name="profile_01">Profile 01</string>
+    <string name="profile_01_home_013">Profile 01</string>
+    <string name="profile_01_home_014">Profile 01</string>
+    <string name="profile_03">Profile 03</string>
+    <string name="profile_01_home_016">profile_01_home_016</string>
+    <string name="_9477_xxx_xx_xxx1">+9477 xxx xx xxx</string>
+    <string name="profile_01_home_017">profile_01_home_017</string>
+    <string name="n_g_k_Sasiru">N.G.K.Nawagmuwa</string>
+    <string name="profile_disply01">profile_disply01</string>
+    <string name="profile_disply_02">profile_disply_02</string>
+    <string name="n_g_k_nawagamuwa">N.G.K.Nawagamuwa</string>
+    <string name="profile_disply_03">profile_disply_03</string>
+    <string name="textview">TextView</string>
 </resources>
