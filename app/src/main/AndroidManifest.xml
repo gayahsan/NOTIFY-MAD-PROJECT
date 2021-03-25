@@ -21,6 +21,7 @@
         <activity android:name=".ActivityReminder_01" />
         <activity android:name=".profileHome" />
         <activity android:name=".NotepadHome" />
+        <activity android:name=".NotepadAddNote"/>
         <activity android:name=".Todo" />
         <activity android:name=".profileEdit"/>
     </application>
