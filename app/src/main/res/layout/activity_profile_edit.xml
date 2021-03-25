@@ -94,7 +94,7 @@
         android:layout_marginStart="40dp"
         android:layout_marginTop="272dp"
         android:fontFamily="@font/main"
-        android:text="@string/lbl_profile_desc"
+        android:text="@string/txt_profile_description"
         android:textColor="@color/black"
         android:textSize="18sp"
         app:layout_constraintStart_toStartOf="parent"
