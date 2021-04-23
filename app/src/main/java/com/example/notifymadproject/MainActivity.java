@@ -22,7 +22,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
     }
 
-
     public void intentTodo(View view) {
         Intent intentTodo = new Intent(this, Todo.class);
         startActivity(intentTodo);

@@ -10,7 +10,7 @@ import android.widget.Button;
 
 public class NotepadHome extends AppCompatActivity {
 
-    RecyclerView recycler;
+    RecyclerView recyclerView;
     Button fab;
 
     @Override
@@ -18,8 +18,7 @@ public class NotepadHome extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notepad_home);
 
-        /*fab = findViewById(R.id.fab_add_note);*/
-        /*recycler = findViewById(R.id.rec_notes_view);*/
+        recyclerView = findViewById(R.id.listOfNotes);
     }
 
     public void intentToEdit(View view) {
