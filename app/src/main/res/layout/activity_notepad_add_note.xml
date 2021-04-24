@@ -7,6 +7,23 @@
     android:background="@drawable/background"
     tools:context=".NotepadAddNote">
 
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_save_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:layout_marginBottom="56dp"
+        android:clickable="true"
+        android:contentDescription="@string/add_new_note"
+        android:onClick="saveNote"
+        app:backgroundTint="@color/light_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.952"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_long2"
+        app:srcCompat="?android:attr/textCheckMarkInverse" />
+
     <ImageView
         android:id="@+id/card_long2"
         android:layout_width="wrap_content"

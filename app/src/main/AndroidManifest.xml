@@ -20,8 +20,20 @@
         <activity android:name=".ProfileDisplay" />
         <activity android:name=".ActivityReminder_01" />
         <activity android:name=".profileHome" />
-        <activity android:name=".NotepadHome" />
-        <activity android:name=".NotepadAddNote"/>
+
+        <!--Starting of Bhashana-->
+        <activity android:name=".NotepadHome">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".MainActivity"/>
+        </activity>
+        <activity android:name=".NotepadAddNote">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".NotepadHome"/>
+        </activity>
+        <!--End of Bhashana-->
+
         <activity android:name=".Todo" />
         <activity android:name=".profileEdit"/>
     </application>

@@ -1,14 +1,18 @@
 package com.example.notifymadproject;
 
+import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.provider.ContactsContract;
+import android.util.Log;
 
 public class NotesDatabase extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 2;
     private static final String DATABASE_NAME = "noteify";
     private static final String DATABASE_TABLE = "notes_tb";
+    long ID;
 
     // Column names for the database: ID, Title, Content, Time and Date;
     private static final String KEY_ID = "id";
@@ -25,12 +29,11 @@ public class NotesDatabase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // CREATE TABLE notes (id INT PRIMARY KEY, title TEXT, content TEXT, date TEXT, time TEXT);
         // String query = "CREATE TABLE " + DATABASE_TABLE + "(" + KEY_ID + "INT PRIMARY KEY," + KEY_TITLE + "TEXT," + KEY_CONTENT + "TEXT," + KEY_DATE + "TEXT," + KEY_TIME + "TEXT" + ")";
-        String query = "CREATE TABLE IF NOT EXISTS " + DATABASE_TABLE + "(" +
-                KEY_ID + "INT NOT NULL PRIMARY KEY AUTOINCREMENT," +
-                KEY_TITLE + "TEXT NOT NULL," +
-                KEY_CONTENT + "TEXT NOT NULL," +
-                KEY_DATE + "TEXT NOT NULL," +
-                KEY_TIME + "TEXT NOT NULL" + ")";
+        String query = "CREATE TABLE "+ DATABASE_TABLE + "("+ KEY_ID+ " INT PRIMARY KEY,"+
+                KEY_TITLE + " TEXT,"+
+                KEY_CONTENT + " TEXT,"+
+                KEY_DATE + " TEXT,"+
+                KEY_TIME + " TEXT"+")";
         db.execSQL(query);
     }
 
@@ -41,17 +44,28 @@ public class NotesDatabase extends SQLiteOpenHelper {
         }
         db.execSQL("DROP TABLE IF EXISTS " +
                 DATABASE_TABLE);
+    }
 
+    public long addNote(NotesDataBridge note) {
+        try {
+            SQLiteDatabase db = this.getWritableDatabase();
+            ContentValues contentValues = new ContentValues();
 
-        /*if (condition){
-            // execute this one
-        } else {
-            // execute this one
+            // Set values to the key;
+            contentValues.put(KEY_TITLE, note.getTitle());
+            contentValues.put(KEY_CONTENT, note.getContent());
+            contentValues.put(KEY_DATE, note.getDate());
+            contentValues.put(KEY_TIME, note.getTime());
+
+            // Inserting to the database;
+            ID = db.insert(DATABASE_TABLE, null, contentValues);
+
+            // Checking if the data is inserted;
+            Log.d("addNote", "ID => " + ID);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-        ============================
-
-        if (condition)
-            // execute this*/
+        return ID;
     }
 }
