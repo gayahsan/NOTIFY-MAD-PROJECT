@@ -2,6 +2,7 @@ package com.example.notifymadproject;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -52,5 +53,13 @@ public class NotepadAddNote extends AppCompatActivity {
         NotesDatabase noteDB = new NotesDatabase(this);
 
         long id = noteDB.addNote(note);
+        
+        // Go back to the main
+        goToMain();
+    }
+
+    private void goToMain() {
+        Intent intent = new Intent(this, NotepadHome.class);
+        startActivity(intent);
     }
 }
