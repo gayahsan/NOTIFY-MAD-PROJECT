@@ -82,7 +82,7 @@
         android:textStyle="italic"
         tools:text="Type of Contact" />
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <!--<de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/imageContact"
         android:layout_width="80dp"
         android:layout_height="80dp"
@@ -90,7 +90,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="18dp"
         android:layout_marginTop="170dp"
-        android:src="@drawable/photo" />
+        android:src="@drawable/photo" />-->
 
     <TextView
         android:id="@+id/textEmail"

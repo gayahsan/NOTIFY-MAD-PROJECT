@@ -67,7 +67,7 @@
 
 
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <!--<de.hdodenhof.circleimageview.CircleImageView
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/profile_image"
         android:layout_width="220dp"
@@ -75,7 +75,7 @@
         android:layout_marginTop="40dp"
         android:layout_alignParentTop="true"
         android:layout_centerInParent="true"
-        android:src="@drawable/photo" />
+        android:src="@drawable/photo" />-->
 
 
 

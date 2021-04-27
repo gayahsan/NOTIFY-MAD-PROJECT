@@ -10,6 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NOTIFYMADProject">
+        <activity android:name=".NotepadGetNote" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,23 +20,19 @@
         </activity>
         <activity android:name=".ProfileDisplay" />
         <activity android:name=".ActivityReminder_01" />
-        <activity android:name=".profileHome" />
-
-        <!--Starting of Bhashana-->
+        <activity android:name=".profileHome" /> <!-- Starting of Bhashana -->
         <activity android:name=".NotepadHome">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
         </activity>
         <activity android:name=".NotepadAddNote">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".NotepadHome"/>
-        </activity>
-        <!--End of Bhashana-->
-
+                android:value=".NotepadHome" />
+        </activity> <!-- End of Bhashana -->
         <activity android:name=".Todo" />
-        <activity android:name=".profileEdit"/>
+        <activity android:name=".profileEdit" />
     </application>
 
 </manifest>

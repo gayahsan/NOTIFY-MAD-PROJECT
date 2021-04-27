@@ -105,8 +105,6 @@
     <string name="sample_time">00:00</string>
 
 
-
-
     <!-- Label for overflow menu option that inserts fake product data into the app [CHAR LIMIT=20] -->
     <string name="action_insert_dummy_data">Insert Dummy Data</string>
 
@@ -287,8 +285,6 @@
 
     <!-- Dummy data: model of item -->
     <string name="toast_out_of_stock_msg">Product is out of stock!</string>
-
-
 
 
 </resources>
