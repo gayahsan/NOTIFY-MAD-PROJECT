@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+
+
     android:background="@drawable/background"
-    tools:context=".profileHome">
+    tools:context=".profileHome"
+    tools:ignore="LabelFor">
 
     <TextView
         android:id="@+id/appTitle"
@@ -37,54 +42,99 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/appTitle" />
 
+
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="387dp"
+        android:layout_height="605dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="-1dp"
         android:layout_marginTop="110dp"
+        android:layout_marginBottom="40dp"
         android:contentDescription="@string/profile_home_01"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/card_long" />
 
-    <ImageView
-        android:id="@+id/imageView6"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="294dp"
-        android:contentDescription="@string/profile_disply01"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/editpage_image" />
+
+
+
+
+
+
+
+
+    <!--<de.hdodenhof.circleimageview.CircleImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/profile_image"
+        android:layout_width="220dp"
+        android:layout_height="220dp"
+        android:layout_marginTop="40dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerInParent="true"
+        android:src="@drawable/photo" />-->
+
+
+
 
     <TextView
-        android:id="@+id/textView13"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
-        android:contentDescription="@string/profile_disply_02"
-        android:fontFamily="@font/main"
-        android:text="@string/txt_profile_name"
-        android:textColor="@color/black"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toTopOf="@+id/imageView6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        android:layout_centerInParent="true"
+        android:layout_marginTop="4dp"
+        android:textSize="15sp"
+        android:id="@+id/textHint"
+        android:text="Tap to Add an Image"
+        android:textStyle="bold"
+        android:layout_below="@+id/profile_image" />
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="304dp"
-        android:layout_height="211dp"
-        android:layout_marginTop="216dp"
-        android:contentDescription="@string/profile_disply_03"
-        android:text="@string/txt_profile_description"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/imageView6"
-        app:layout_constraintVertical_bias="0.066" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/nameEditText"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_below="@+id/textHint"
+        android:layout_centerInParent="true"
+        android:hint="Name"/>
+
+
+    <EditText
+        android:layout_width="135dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/phoneEditText"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_below="@+id/nameEditText"
+        android:inputType="number"
+        android:hint="Phone Number"/>
+
+    <Spinner
+        android:layout_width="170dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_below="@+id/nameEditText"
+        android:layout_toRightOf="@+id/phoneEditText"
+        android:id="@+id/spinner"/>
+
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/emailEditText"
+        android:layout_marginRight="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="50dp"
+        android:layout_below="@+id/phoneEditText"
+        android:layout_centerInParent="true"
+        android:hint="Email"/>
+
+
+</RelativeLayout>

@@ -14,7 +14,7 @@ import java.util.List;
 public class NotesDatabase extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 2;
-    private static final String DATABASE_NAME = "noteify";
+    private static final String DATABASE_NAME = "noteify1";
     private static final String DATABASE_TABLE = "notes_tb";
     private static long ID;
     private static NotesDataBridge note;
@@ -34,7 +34,7 @@ public class NotesDatabase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // CREATE TABLE notes (id INT PRIMARY KEY, title TEXT, content TEXT, date TEXT, time TEXT);
         // String query = "CREATE TABLE " + DATABASE_TABLE + "(" + KEY_ID + "INT PRIMARY KEY," + KEY_TITLE + "TEXT," + KEY_CONTENT + "TEXT," + KEY_DATE + "TEXT," + KEY_TIME + "TEXT" + ")";
-        String query = "CREATE TABLE "+ DATABASE_TABLE + "("+ KEY_ID+ " INT PRIMARY KEY,"+
+        String query = "CREATE TABLE "+ DATABASE_TABLE + "("+ KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"+
                 KEY_TITLE + " TEXT,"+
                 KEY_CONTENT + " TEXT,"+
                 KEY_DATE + " TEXT,"+
@@ -87,6 +87,7 @@ public class NotesDatabase extends SQLiteOpenHelper {
         }
 
         try {
+            assert cursor != null; // Recommended Coding Convention from IDEA
             note = new NotesDataBridge(cursor.getLong(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
         } catch (Exception e) {
             e.printStackTrace();
@@ -114,6 +115,7 @@ public class NotesDatabase extends SQLiteOpenHelper {
                 do {
                     NotesDataBridge note = new NotesDataBridge();
                     note.setId(cursor.getLong(0));
+                    Log.d("ID", "ID: " + cursor.getLong(0));
                     note.setTitle(cursor.getString(1));
                     note.setContent(cursor.getString(2));
                     note.setDate(cursor.getString(3));
