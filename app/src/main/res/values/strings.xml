@@ -36,7 +36,7 @@
     <!--String values for profile-->
     <string name="txt_profiles_card">Profiles</string>
     <string name="txt_profiles_desc">Profiles are like contacts in your phone. But works as a separate contact list</string>
-    <string name="profileTopic">Profile</string>
+    <string name="profileTopic">Take Your Profile Hera</string>
     <string name="txt_profile_name">Profile name goes here!</string>
     <string name="txt_profile_description">Profile description goes here</string>
     <string name="img_profile">profile image</string>
