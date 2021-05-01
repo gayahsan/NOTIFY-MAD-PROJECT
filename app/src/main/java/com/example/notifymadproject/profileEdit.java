@@ -506,5 +506,8 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
     }
 
 
-
+    public void SaveProfile(View view) {
+        saveContact();
+        
+    }
 }
