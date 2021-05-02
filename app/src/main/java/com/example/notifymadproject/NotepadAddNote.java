@@ -46,8 +46,8 @@ public class NotepadAddNote extends AppCompatActivity {
         Log.d("saveNote", "In save note...");
 
         // Save button testing
-        Toast saveClicked = Toast.makeText(this, "Save button clicked...", Toast.LENGTH_SHORT);
-        saveClicked.show();
+        // Toast saveClicked = Toast.makeText(this, "Save button clicked...", Toast.LENGTH_SHORT);
+        // saveClicked.show();
 
         NotesDataBridge note = new NotesDataBridge(noteTitle.getText().toString(), noteDetails.getText().toString(), currentDate, currentTime);
         NotesDatabase noteDB = new NotesDatabase(this);
@@ -58,7 +58,7 @@ public class NotepadAddNote extends AppCompatActivity {
         goToMain();
     }
 
-    private void goToMain() {
+    public void goToMain() {
         Intent intent = new Intent(this, NotepadHome.class);
         startActivity(intent);
     }

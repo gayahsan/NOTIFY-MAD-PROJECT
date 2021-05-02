@@ -3,6 +3,7 @@ package com.example.notifymadproject;
 public class NotesDataBridge { // This class works as a servlet in dynamic web projects
     long id;
     private String title, content, date, time;
+    int noteCount;
 
     NotesDataBridge(){}
 
@@ -59,5 +60,9 @@ public class NotesDataBridge { // This class works as a servlet in dynamic web p
 
     public void setTime(String time) {
         this.time = time;
+    }
+
+    public void setNoteCount(int count) {
+        this.noteCount = count;
     }
 }
