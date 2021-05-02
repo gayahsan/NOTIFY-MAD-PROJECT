@@ -111,12 +111,32 @@
         android:layout_marginBottom="56dp"
         android:clickable="true"
         android:contentDescription="@string/add_new_note"
+        android:onClick="editNoteBtn"
         app:backgroundTint="@color/light_green"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.952"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/card_long2"
-        app:srcCompat="?android:attr/textCheckMarkInverse" />
+        app:layout_constraintVertical_bias="0.0"
+        app:rippleColor="#FFFFFF"
+        app:srcCompat="?android:attr/textCheckMark" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab_delete_note"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="1dp"
+        android:clickable="true"
+        android:contentDescription="@string/delete"
+        android:onClick="deleteNoteBtn"
+        app:backgroundTint="@color/light_green"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/fab_save_note"
+        app:layout_constraintHorizontal_bias="0.939"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_long2"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@android:drawable/ic_menu_delete" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

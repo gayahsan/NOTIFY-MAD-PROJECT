@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.provider.ContactsContract;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -18,6 +17,7 @@ public class NotesDatabase extends SQLiteOpenHelper {
     private static final String DATABASE_TABLE = "notes_tb";
     private static long ID;
     private static NotesDataBridge note;
+    private static int notesCount;
 
     // Column names for the database: ID, Title, Content, Time and Date;
     private static final String KEY_ID = "id";
@@ -120,7 +120,6 @@ public class NotesDatabase extends SQLiteOpenHelper {
                     note.setContent(cursor.getString(2));
                     note.setDate(cursor.getString(3));
                     note.setTime(cursor.getString(4));
-
                     allNotes.add(note);
                 } while (cursor.moveToNext());
             }
@@ -133,7 +132,18 @@ public class NotesDatabase extends SQLiteOpenHelper {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        Log.d("NotesCount", "Total Notes: " + allNotes.size());
+        notesCount = allNotes.size();
         return allNotes;
+    }
+
+    public int getNoteCount() {
+        return notesCount;
+    }
+
+    public void deleteNote(long id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(DATABASE_TABLE, KEY_ID+"=?", new String[]{String.valueOf(id)});
+        db.close();
     }
 }
