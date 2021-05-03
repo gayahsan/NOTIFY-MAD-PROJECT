@@ -146,4 +146,15 @@ public class NotesDatabase extends SQLiteOpenHelper {
         db.delete(DATABASE_TABLE, KEY_ID+"=?", new String[]{String.valueOf(id)});
         db.close();
     }
+
+    public int editNote(NotesDataBridge note) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues c = new ContentValues();
+        Log.d("Edited", "Edited title: " + note.getTitle() + "\nID: " + note.getId());
+        c.put(KEY_TITLE, note.getTitle());
+        c.put(KEY_CONTENT, note.getContent());
+        c.put(KEY_DATE, note.getDate());
+        c.put(KEY_TIME, note.getTime());
+        return db.update(DATABASE_TABLE, c, KEY_ID+"=?", new String[]{String.valueOf(note.getId())});
+    }
 }
