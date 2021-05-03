@@ -163,18 +163,6 @@
         app:layout_constraintTop_toTopOf="@+id/button_card" />
 
     <TextView
-        android:id="@+id/txtProfileView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="25dp"
-        android:fontFamily="@font/main"
-        android:text="@string/txt_profiles_card"
-        android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/button_card4"
-        app:layout_constraintTop_toTopOf="@+id/button_card4" />
-
-    <TextView
         android:id="@+id/txtReminderView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -265,5 +253,19 @@
         app:layout_constraintStart_toStartOf="@+id/button_card2"
         app:layout_constraintTop_toBottomOf="@+id/txtTodoView"
         app:useMaterialThemeColors="false" />
+
+    <TextView
+        android:id="@+id/textView15"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="180dp"
+        android:text="Take Your Profile Hera"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/button_card4"
+        app:layout_constraintTop_toTopOf="@+id/button_card3"
+        app:layout_constraintVertical_bias="0.043" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
