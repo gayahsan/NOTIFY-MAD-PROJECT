@@ -1,19 +1,9 @@
 package com.example.notifymadproject;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.app.ActivityCompat;
-import androidx.core.app.NavUtils;
-import androidx.core.content.ContextCompat;
-import androidx.loader.app.LoaderManager;
-import androidx.loader.content.Loader;
-
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.ContentValues;
-import android.content.CursorLoader;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -33,7 +23,14 @@ import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-public class profileEdit extends AppCompatActivity implements LoaderManager.LoaderCallbacks <Cursor> {
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.app.NavUtils;
+import androidx.core.content.ContextCompat;
+import androidx.loader.app.LoaderManager;
+import androidx.loader.content.Loader;
+
+public class profileEdit extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
 
 
     EditText mNameEditText, mNumberEditText, mEmailEditText;
@@ -318,15 +315,11 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
         hasAllRequiredValues = true;
 
         return hasAllRequiredValues;
-
-
-
-
     }
 
 
     @Override
-    public Loader<Cursor> onCreateLoader(int id,  Bundle args) {
+    public Loader<Cursor> onCreateLoader(int id, Bundle args) {
         String[] projection = {ProfileContract.ContactEntry._ID,
                 ProfileContract.ContactEntry.COLUMN_NAME,
                 ProfileContract.ContactEntry.COLUMN_EMAIL,
@@ -508,6 +501,7 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
 
     public void SaveProfile(View view) {
         saveContact();
-        
+
+
     }
 }

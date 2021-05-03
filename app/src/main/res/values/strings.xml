@@ -287,8 +287,7 @@
 
     <!-- Dummy data: model of item -->
     <string name="toast_out_of_stock_msg">Product is out of stock!</string>
-
-
+    <string name="prfiletextview">TextView</string>
 
 
 </resources>
