@@ -18,6 +18,7 @@
     <string name="txt_notes_ret">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</string>
     <string name="btn_notepad">Notepad</string>
     <string name="text_note_count">Note Count</string>
+    <string name="txtStorageCount">Free Storage Used</string>
 
     <!--String values for ToDoList-->
     <string name="ToDo_List">ToDo List</string>
@@ -286,7 +287,6 @@
 
     <!-- Dummy data: model of item -->
     <string name="toast_out_of_stock_msg">Product is out of stock!</string>
-    <string name="txtStorageCount">Free Storage Used</string>
 
 
 </resources>
