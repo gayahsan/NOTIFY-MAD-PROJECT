@@ -83,7 +83,7 @@
     <ListView
         android:id="@+id/list"
         android:layout_width="wrap_content"
-        android:layout_height="388dp"
+        android:layout_height="423dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -92,7 +92,7 @@
         android:layout_marginStart="25dp"
         android:layout_marginTop="141dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="111dp" />
+        android:layout_marginBottom="76dp" />
 
 
 

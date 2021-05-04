@@ -1,3 +1,4 @@
+
 package com.example.notifymadproject;
 
 import android.Manifest;
@@ -433,6 +434,7 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
             public void onClick(DialogInterface dialog, int id) {
                 // User clicked the "Delete" button, so delete the product.
                 deleteProduct();
+
             }
         });
         builder.setNegativeButton(R.string.cancel, new DialogInterface.OnClickListener() {
@@ -502,6 +504,12 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
     public void SaveProfile(View view) {
         saveContact();
 
+
+    }
+
+    public void profileDelete(View view) {
+        showDeleteConfirmationDialog();
+        //deleteProduct();
 
     }
 }
