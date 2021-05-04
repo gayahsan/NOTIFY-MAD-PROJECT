@@ -41,4 +41,8 @@ public class MainActivity extends AppCompatActivity {
         Intent intentToReminder = new Intent(this, ActivityReminder_01.class);
         startActivity(intentToReminder);
     }
+    
+    protected int multiplyNumbers(int x, int y) {
+        return x * y;
+    }
 }
