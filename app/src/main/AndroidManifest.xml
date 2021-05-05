@@ -40,7 +40,8 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".NotepadHome" />
         </activity> <!-- End of Bhashana -->
-        <activity android:name=".Todo" />
+        <activity android:name=".Todo" >
+        </activity>
         <activity android:name=".profileEdit" />
     </application>
 

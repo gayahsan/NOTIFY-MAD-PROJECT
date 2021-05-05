@@ -9,6 +9,11 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!--out of our project delete after use start-->
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">@android:color/holo_green_dark</color>
+    <color name="colorAccent">#000000</color>
+    <!--out of our project delete after use end-->
 
     <!--Our Project Colors-->
     <color name="dark_green">#3FC1AF</color>
