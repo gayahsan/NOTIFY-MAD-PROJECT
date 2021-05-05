@@ -122,7 +122,7 @@
         android:contentDescription="@string/todo" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/edt_up_event"
         android:layout_width="282dp"
         android:layout_height="41dp"
         android:ems="10"

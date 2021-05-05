@@ -2,7 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.notifymadproject">
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
@@ -32,7 +34,10 @@
                 android:value=".NotepadHome" />
         </activity> <!-- End of Bhashana -->
         <activity android:name=".Todo" />
+        <activity android:name=".Activity_reminder_create_new" />
+        <activity android:name=".ActivityReminderUpdate" />
         <activity android:name=".profileEdit" />
+        <receiver android:name=".AlarmBroadcast" />
     </application>
 
 </manifest>
