@@ -29,6 +29,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.core.app.NavUtils;
 import androidx.core.content.ContextCompat;
 import androidx.loader.app.LoaderManager;
+import androidx.loader.content.CursorLoader;
 import androidx.loader.content.Loader;
 
 public class profileEdit extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
@@ -329,11 +330,11 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
                 ProfileContract.ContactEntry.COLUMN_TYPEOFCONTACT
         };
 
-//        return new CursorLoader(this, mCurrentContactUri,
-//                projection, null,
-//                null,
-//                null);
-        return null;
+        return new CursorLoader(this, mCurrentContactUri,
+                projection, null,
+                null,
+                null);
+        //return null;
 
     }
 
