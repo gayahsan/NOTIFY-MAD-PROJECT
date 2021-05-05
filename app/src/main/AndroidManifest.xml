@@ -12,11 +12,7 @@
         android:theme="@style/Theme.NOTIFYMADProject">
         <activity android:name=".NotepadGetNote" />
         <activity android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".ProfileDisplay" />
         <activity android:name=".ActivityReminder_01" />
@@ -31,7 +27,15 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".NotepadHome" />
         </activity> <!-- End of Bhashana -->
-        <activity android:name=".Todo" />
+        <activity android:name=".Todo" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+
+        </activity>
         <activity android:name=".profileEdit" />
     </application>
 
