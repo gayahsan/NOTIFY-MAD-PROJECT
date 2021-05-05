@@ -1,20 +1,17 @@
 package com.example.notifymadproject;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.List;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
-import static java.lang.String.*;
+import java.util.List;
 
 public class NotepadHome extends AppCompatActivity {
 
@@ -44,7 +41,6 @@ public class NotepadHome extends AppCompatActivity {
         notesPercentageView = findViewById(R.id.txtStorageCount);
 
         percentage = ((db.getNoteCount()) / 10.00) * 100.00;
-        // Log.d("Percentage", "Percentage: " + percentage);
         notesPercentage = "Free storage used: " + percentage + "%";
 
         // Sending to XML
