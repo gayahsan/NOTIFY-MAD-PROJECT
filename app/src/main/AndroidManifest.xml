@@ -6,7 +6,10 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
     <application
+        android:name=".App"
         android:allowBackup="true"
         android:fullBackupContent="true"
         android:icon="@mipmap/ic_launcher"
@@ -14,6 +17,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.NOTIFYMADProject">
+        <activity android:name=".NotepadGetNote" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,23 +32,22 @@
             android:exported="false" />
 
         <activity android:name=".ActivityReminder_01" />
-        <activity android:name=".profileHome" />
-
-        <!--Starting of Bhashana-->
+        <activity android:name=".profileHome" /> <!-- Starting of Bhashana -->
         <activity android:name=".NotepadHome">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".MainActivity"/>
+                android:value=".MainActivity" />
         </activity>
         <activity android:name=".NotepadAddNote">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value=".NotepadHome"/>
-        </activity>
-        <!--End of Bhashana-->
-
+                android:value=".NotepadHome" />
+        </activity> <!-- End of Bhashana -->
         <activity android:name=".Todo" />
-        <activity android:name=".profileEdit"/>
+        <activity android:name=".Activity_reminder_create_new" />
+        <activity android:name=".ActivityReminderUpdate" />
+        <activity android:name=".profileEdit" />
+        <receiver android:name=".AlarmBroadcast" />
     </application>
 
 </manifest>

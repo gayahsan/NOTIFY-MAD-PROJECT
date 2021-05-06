@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.provider.ContactsContract;
 import android.util.Log;
 
 import java.util.ArrayList;
@@ -14,10 +13,11 @@ import java.util.List;
 public class NotesDatabase extends SQLiteOpenHelper {
 
     private static final int DATABASE_VERSION = 2;
-    private static final String DATABASE_NAME = "noteify";
+    private static final String DATABASE_NAME = "noteify1";
     private static final String DATABASE_TABLE = "notes_tb";
     private static long ID;
     private static NotesDataBridge note;
+    private static int notesCount;
 
     // Column names for the database: ID, Title, Content, Time and Date;
     private static final String KEY_ID = "id";
@@ -34,7 +34,7 @@ public class NotesDatabase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         // CREATE TABLE notes (id INT PRIMARY KEY, title TEXT, content TEXT, date TEXT, time TEXT);
         // String query = "CREATE TABLE " + DATABASE_TABLE + "(" + KEY_ID + "INT PRIMARY KEY," + KEY_TITLE + "TEXT," + KEY_CONTENT + "TEXT," + KEY_DATE + "TEXT," + KEY_TIME + "TEXT" + ")";
-        String query = "CREATE TABLE "+ DATABASE_TABLE + "("+ KEY_ID+ " INT PRIMARY KEY,"+
+        String query = "CREATE TABLE "+ DATABASE_TABLE + "("+ KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT,"+
                 KEY_TITLE + " TEXT,"+
                 KEY_CONTENT + " TEXT,"+
                 KEY_DATE + " TEXT,"+
@@ -87,6 +87,7 @@ public class NotesDatabase extends SQLiteOpenHelper {
         }
 
         try {
+            assert cursor != null; // Recommended Coding Convention from IDEA
             note = new NotesDataBridge(cursor.getLong(0), cursor.getString(1), cursor.getString(2), cursor.getString(3), cursor.getString(4));
         } catch (Exception e) {
             e.printStackTrace();
@@ -114,11 +115,11 @@ public class NotesDatabase extends SQLiteOpenHelper {
                 do {
                     NotesDataBridge note = new NotesDataBridge();
                     note.setId(cursor.getLong(0));
+                    Log.d("ID", "ID: " + cursor.getLong(0));
                     note.setTitle(cursor.getString(1));
                     note.setContent(cursor.getString(2));
                     note.setDate(cursor.getString(3));
                     note.setTime(cursor.getString(4));
-
                     allNotes.add(note);
                 } while (cursor.moveToNext());
             }
@@ -131,7 +132,29 @@ public class NotesDatabase extends SQLiteOpenHelper {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
+        Log.d("NotesCount", "Total Notes: " + allNotes.size());
+        notesCount = allNotes.size();
         return allNotes;
+    }
+
+    public int getNoteCount() {
+        return notesCount;
+    }
+
+    public void deleteNote(long id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(DATABASE_TABLE, KEY_ID+"=?", new String[]{String.valueOf(id)});
+        db.close();
+    }
+
+    public int editNote(NotesDataBridge note) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues c = new ContentValues();
+        Log.d("Edited", "Edited title: " + note.getTitle() + "\nID: " + note.getId());
+        c.put(KEY_TITLE, note.getTitle());
+        c.put(KEY_CONTENT, note.getContent());
+        c.put(KEY_DATE, note.getDate());
+        c.put(KEY_TIME, note.getTime());
+        return db.update(DATABASE_TABLE, c, KEY_ID+"=?", new String[]{String.valueOf(note.getId())});
     }
 }

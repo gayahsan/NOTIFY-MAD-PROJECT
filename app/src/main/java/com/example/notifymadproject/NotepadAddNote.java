@@ -45,20 +45,19 @@ public class NotepadAddNote extends AppCompatActivity {
     public void saveNote(View view) {
         Log.d("saveNote", "In save note...");
 
-        // Save button testing
-        Toast saveClicked = Toast.makeText(this, "Save button clicked...", Toast.LENGTH_SHORT);
-        saveClicked.show();
+        if (noteTitle.getText().length() != 0) {
+            NotesDataBridge note = new NotesDataBridge(noteTitle.getText().toString(), noteDetails.getText().toString(), currentDate, currentTime);
+            NotesDatabase noteDB = new NotesDatabase(this);
+            long id = noteDB.addNote(note);
+            goToMain();
+        } else {
+            Toast.makeText(this,"Title cannot be blank...", Toast.LENGTH_SHORT).show();
+        }
 
-        NotesDataBridge note = new NotesDataBridge(noteTitle.getText().toString(), noteDetails.getText().toString(), currentDate, currentTime);
-        NotesDatabase noteDB = new NotesDatabase(this);
 
-        long id = noteDB.addNote(note);
-        
-        // Go back to the main
-        goToMain();
     }
 
-    private void goToMain() {
+    public void goToMain() {
         Intent intent = new Intent(this, NotepadHome.class);
         startActivity(intent);
     }
