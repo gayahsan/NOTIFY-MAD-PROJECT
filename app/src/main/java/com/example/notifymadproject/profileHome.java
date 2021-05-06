@@ -29,6 +29,7 @@ public class profileHome extends AppCompatActivity implements LoaderManager.Load
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_home);
+        //Toast.makeText(this, "On Profile Home...", Toast.LENGTH_SHORT).show();
 
 
         FloatingActionButton fab = findViewById(R.id.fab);

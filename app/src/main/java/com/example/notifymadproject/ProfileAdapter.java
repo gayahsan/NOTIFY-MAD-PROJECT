@@ -50,9 +50,15 @@ public class ProfileAdapter extends CursorAdapter {
         numberView.setText(contactnumber);
         typeofContactView.setText(typeof);
         emailView.setText(contactemail);
-        //mContactImageView.setImageURI(imageUri);
-
-
+//        try {
+//
+//            mContactImageView.setImageURI(imageUri);
+//
+//        } catch (Exception e) {
+//
+//            e.printStackTrace();
+//
+//        }
 
     }
 }
