@@ -99,7 +99,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView13" />
 
     <EditText
-        android:id="@+id/editTextTextPersonName"
+        android:id="@+id/edt_up_event"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="52dp"
@@ -111,36 +111,70 @@
         app:layout_constraintStart_toEndOf="@+id/textView12" />
 
     <EditText
-        android:id="@+id/editTextDate"
-        android:layout_width="wrap_content"
+        android:id="@+id/edt_up_date"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/date"
-        android:inputType="date"
+        android:inputType="date|text"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView13"
-        app:layout_constraintStart_toStartOf="@+id/editTextTextPersonName" />
+        app:layout_constraintStart_toStartOf="@+id/edt_up_event" />
 
     <EditText
-        android:id="@+id/editTextTime"
-        android:layout_width="wrap_content"
+        android:id="@+id/edt_up_time"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:autofillHints=""
         android:ems="10"
         android:hint="@string/time"
-        android:inputType="time"
+        android:inputType="text|time"
         app:layout_constraintBaseline_toBaselineOf="@+id/textView14"
-        app:layout_constraintStart_toStartOf="@+id/editTextDate" />
+        app:layout_constraintStart_toStartOf="@+id/edt_up_date" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/btn_update"
         android:layout_width="61dp"
         android:layout_height="49dp"
+        android:layout_marginStart="100dp"
         android:contentDescription="@string/remcheck"
         app:layout_constraintBottom_toBottomOf="@+id/card_long"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTime"
+        app:layout_constraintTop_toBottomOf="@+id/edt_up_time"
         app:layout_constraintVertical_bias="0.675"
         app:srcCompat="@drawable/reminder_check" />
+
+    <ImageView
+        android:id="@+id/ic_up_calendar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toEndOf="@+id/edt_up_date"
+        app:layout_constraintTop_toBottomOf="@+id/edt_up_event"
+        app:srcCompat="@drawable/ic_calendar"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/ic_up_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintStart_toEndOf="@+id/edt_up_time"
+        app:layout_constraintTop_toBottomOf="@+id/edt_up_date"
+        app:srcCompat="@drawable/ic_time"
+        tools:ignore="VectorDrawableCompat" />
+
+    <ImageView
+        android:id="@+id/btn_delete"
+        android:layout_width="61dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="36dp"
+        app:layout_constraintBottom_toBottomOf="@+id/card_long"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_up_time"
+        app:layout_constraintVertical_bias="0.963"
+        app:srcCompat="@drawable/ic_delete" />
 </androidx.constraintlayout.widget.ConstraintLayout>
