@@ -62,10 +62,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-   <!-- <ImageView
+    <ImageView
         android:id="@+id/card_long2"
         android:layout_width="match_parent"
-        android:layout_height="502dp"
+        android:layout_height="649dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
@@ -77,22 +77,22 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/appSubTitle"
-        app:srcCompat="@drawable/card_long" />-->
+        app:srcCompat="@drawable/card_long" />
 
 
     <ListView
         android:id="@+id/list"
         android:layout_width="wrap_content"
-        android:layout_height="388dp"
+        android:layout_height="520dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
         android:layout_marginStart="25dp"
-        android:layout_marginTop="141dp"
+        android:layout_marginTop="111dp"
         android:layout_marginEnd="25dp"
-        android:layout_marginBottom="111dp" />
+        android:layout_marginBottom="100dp" />
 
 
 

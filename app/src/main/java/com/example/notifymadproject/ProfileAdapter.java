@@ -31,7 +31,7 @@ public class ProfileAdapter extends CursorAdapter {
         emailView = view.findViewById(R.id.textEmail);
         numberView = view.findViewById(R.id.textNumber);
         typeofContactView = view.findViewById(R.id.textTypeofContact);
-        mContactImageView = view.findViewById(R.id.imageContact);
+        // mContactImageView = view.findViewById(R.id.imageContact);
         /// geting position of views
         int name = cursor.getColumnIndex(ProfileContract.ContactEntry.COLUMN_NAME);
         int email = cursor.getColumnIndex(ProfileContract.ContactEntry.COLUMN_EMAIL);
@@ -44,15 +44,25 @@ public class ProfileAdapter extends CursorAdapter {
         String contactnumber = cursor.getString(number);
         String contactpicture = cursor.getString(picture);
         String typeof = cursor.getString(type);
-        Uri imageUri = Uri.parse(contactpicture);
+        try {
+            Uri imageUri = Uri.parse(contactpicture);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         nameView.setText(contactname);
         numberView.setText(contactnumber);
         typeofContactView.setText(typeof);
         emailView.setText(contactemail);
-        //mContactImageView.setImageURI(imageUri);
-
-
+//        try {
+//
+//            mContactImageView.setImageURI(imageUri);
+//
+//        } catch (Exception e) {
+//
+//            e.printStackTrace();
+//
+//        }
 
     }
 }

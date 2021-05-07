@@ -12,9 +12,9 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.notifymadproject.AddNewTask;
-import com.example.notifymadproject.Todo;
 import com.example.notifymadproject.Model.ToDoModel;
 import com.example.notifymadproject.R;
+import com.example.notifymadproject.Todo;
 import com.example.notifymadproject.Utils.DatabaseHandler;
 
 import java.util.List;

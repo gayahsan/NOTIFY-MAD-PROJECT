@@ -1,6 +1,9 @@
+// SASIRU's
 package com.example.notifymadproject;
 
 import android.app.Activity;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -15,17 +18,17 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
-
-import com.example.notifymadproject.Adapters.ToDoAdapter;
 import com.example.notifymadproject.Model.ToDoModel;
 import com.example.notifymadproject.Utils.DatabaseHandler;
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment;
 
 import java.util.Objects;
 
-public class AddNewTask extends BottomSheetDialogFragment {
+public class AddNewTask extends BottomSheetDialogFragment{
 
     public static final String TAG = "ActionBottomDialog";
     private EditText newTaskText;
@@ -41,6 +44,12 @@ public class AddNewTask extends BottomSheetDialogFragment {
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setStyle(STYLE_NORMAL, R.style.DialogStyle);
+
+        // Build a notification channel
+        NotificationChannel channel;
+        channel = new NotificationChannel("Notepad Updates", "Notepad Updates", NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationManager manager = getActivity().getSystemService(NotificationManager.class);
+        manager.createNotificationChannel(channel);
     }
 
     @Nullable
@@ -104,6 +113,18 @@ public class AddNewTask extends BottomSheetDialogFragment {
                 String text = newTaskText.getText().toString();
                 if(finalIsUpdate){
                     db.updateTask(bundle.getInt("id"), text);
+
+                    // Building the notification
+                    String notificationText = "TODO Edited...";
+                    NotificationCompat.Builder builder = new NotificationCompat.Builder(getActivity(), "Notepad Updates");
+                    builder.setContentTitle("TODO Updates");
+                    builder.setContentText("TODO Edited as: "+text);
+                    builder.setSmallIcon(R.drawable.ic_launcher_background);
+                    builder.setAutoCancel(true);
+
+                    // Sending the notification
+                    NotificationManagerCompat managerCompat = NotificationManagerCompat.from(getActivity());
+                    managerCompat.notify(1, builder.build());
                 }
                 else {
                     ToDoModel task = new ToDoModel();
