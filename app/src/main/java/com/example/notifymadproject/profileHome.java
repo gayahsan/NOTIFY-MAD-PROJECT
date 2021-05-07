@@ -8,8 +8,6 @@ import android.content.Loader;
 import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -33,12 +31,9 @@ public class profileHome extends AppCompatActivity implements LoaderManager.Load
 
 
         FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(profileHome.this, profileEdit.class);
-                startActivity(intent);
-            }
+        fab.setOnClickListener(v -> {
+            Intent intent = new Intent(profileHome.this, profileEdit.class);
+            startActivity(intent);
         });
 
         ListView listView = findViewById(R.id.list);
@@ -47,15 +42,12 @@ public class profileHome extends AppCompatActivity implements LoaderManager.Load
 
         // whenever we press a listview for updating
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(profileHome.this, profileEdit.class);
-                Uri newUri = ContentUris.withAppendedId(ProfileContract.ContactEntry.CONTENT_URI, id);
-                intent.setData(newUri);
-                startActivity(intent);
+        listView.setOnItemClickListener((parent, view, position, id) -> {
+            Intent intent = new Intent(profileHome.this, profileEdit.class);
+            Uri newUri = ContentUris.withAppendedId(ProfileContract.ContactEntry.CONTENT_URI, id);
+            intent.setData(newUri);
+            startActivity(intent);
 
-            }
         });
 
         // get the loader running
@@ -78,7 +70,6 @@ public class profileHome extends AppCompatActivity implements LoaderManager.Load
                 projection, null,
                 null,
                 null);
-        //return null;
     }
 
     @Override
@@ -90,15 +81,4 @@ public class profileHome extends AppCompatActivity implements LoaderManager.Load
     public void onLoaderReset(Loader<Cursor> loader) {
         mAdapter.swapCursor(null);
     }
-
-
-//    @Override
-//    public void onLoadFinished( androidx.loader.content.Loader<Cursor> loader, Cursor data) {
-//        mAdapter.swapCursor(data);
-//    }
-//
-//    @Override
-//    public void onLoaderReset( androidx.loader.content.Loader<Cursor> loader) {
-//        mAdapter.swapCursor(null);
-//    }
 }

@@ -1,6 +1,8 @@
 package com.example.notifymadproject;
 
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
@@ -32,7 +34,12 @@ public class Todo extends AppCompatActivity implements DialogCloseListener{
         try {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_todo);
-            // Objects.requireNonNull(getSupportActionBar()).hide();
+
+            // Build a notification channel
+            NotificationChannel channel;
+            channel = new NotificationChannel("TODOUpdates", "TODOUpdates", NotificationManager.IMPORTANCE_DEFAULT);
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
 
             db = new DatabaseHandler(this);
             db.openDatabase();
@@ -66,4 +73,15 @@ public class Todo extends AppCompatActivity implements DialogCloseListener{
         tasksAdapter.setTasks(taskList);
         tasksAdapter.notifyDataSetChanged();
     }
+
+    /*public static void completeNotification(View view) {
+        // Building the notification
+        String notificationText = "Test";
+        String notificationTitle = "Test";
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(Todo.this, "TODOUpdates");
+        builder.setContentTitle(notificationTitle);
+        builder.setContentText(notificationText);
+        builder.setSmallIcon(R.drawable.ic_launcher_background);
+        builder.setAutoCancel(true);
+    }*/
 }

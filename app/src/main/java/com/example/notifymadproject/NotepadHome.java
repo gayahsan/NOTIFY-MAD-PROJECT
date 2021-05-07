@@ -1,5 +1,7 @@
 package com.example.notifymadproject;
 
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +10,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -27,6 +31,12 @@ public class NotepadHome extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notepad_home);
+
+        // Build a notification channel
+        NotificationChannel channel;
+        channel = new NotificationChannel("Test Notification", "Test Notification", NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationManager manager = getSystemService(NotificationManager.class);
+        manager.createNotificationChannel(channel);
 
         // Getting the notes from database
         NotesDatabase db = new NotesDatabase(this);
@@ -58,5 +68,18 @@ public class NotepadHome extends AppCompatActivity {
             Intent intentToEdit  = new Intent(this, NotepadAddNote.class);
             startActivity(intentToEdit);
         }
+    }
+
+    public void testNotification(View view) {
+        // Building the notification
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(NotepadHome.this, "Test Notification");
+        builder.setContentTitle("Test Notification");
+        builder.setContentText("Test notification body");
+        builder.setSmallIcon(R.drawable.ic_launcher_background);
+        builder.setAutoCancel(true);
+
+        // Sending the notification
+        NotificationManagerCompat managerCompat = NotificationManagerCompat.from(NotepadHome.this);
+        managerCompat.notify(1, builder.build());
     }
 }

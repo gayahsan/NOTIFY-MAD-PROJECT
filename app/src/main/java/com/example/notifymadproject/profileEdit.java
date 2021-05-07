@@ -4,6 +4,8 @@ package com.example.notifymadproject;
 import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.ContentValues;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -13,6 +15,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.MotionEvent;
@@ -27,14 +30,14 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.app.NavUtils;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 import androidx.core.content.ContextCompat;
 import androidx.loader.app.LoaderManager;
 import androidx.loader.content.CursorLoader;
 import androidx.loader.content.Loader;
 
 public class profileEdit extends AppCompatActivity implements LoaderManager.LoaderCallbacks<Cursor> {
-
-
     EditText mNameEditText, mNumberEditText, mEmailEditText;
     private Uri mPhotoUri;
     private Uri mCurrentContactUri;
@@ -57,9 +60,15 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
     private Cursor data;
 
     @Override
-    protected void  onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_display);
+
+        // Build a notification channel
+        NotificationChannel channel;
+        channel = new NotificationChannel("Profile Updates", "Profile Updates", NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationManager manager = getSystemService(NotificationManager.class);
+        manager.createNotificationChannel(channel);
 
         Intent intent = getIntent();
         mCurrentContactUri = intent.getData();
@@ -70,39 +79,43 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
         mPhoto = findViewById(R.id.profile_image);
         mSpinner = findViewById(R.id.spinner);
 
-        if (mCurrentContactUri == null) {
-            mPhoto.setImageResource(R.drawable.photo);
-            setTitle("Add a Contact");
-            // we want to hide delete menu when we are adding a new contact
-            invalidateOptionsMenu();
+        try {
+            if (mCurrentContactUri == null) {
+                mPhoto.setImageResource(R.drawable.photo);
+                setTitle("Add a Contact");
+                // we want to hide delete menu when we are adding a new contact
+                invalidateOptionsMenu();
 
-        } else {
-            setTitle("Edit a Contact");
-         // getLoaderManager().initLoader(LOADER, null, this);
+            } else {
+                setTitle("Edit a Contact");
+                // getLoaderManager().initLoader(LOADER, null, this);
 
+            }
+            mNameEditText.setOnTouchListener(mOnTouchListener);
+            mNumberEditText.setOnTouchListener(mOnTouchListener);
+            mEmailEditText.setOnTouchListener(mOnTouchListener);
+            mPhoto.setOnTouchListener(mOnTouchListener);
+            mSpinner.setOnTouchListener(mOnTouchListener);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
 
-        mNameEditText.setOnTouchListener(mOnTouchListener);
-        mNumberEditText.setOnTouchListener(mOnTouchListener);
-        mEmailEditText.setOnTouchListener(mOnTouchListener);
-        mPhoto.setOnTouchListener(mOnTouchListener);
-        mSpinner.setOnTouchListener(mOnTouchListener);
-
-        mPhoto.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                trySelector();
-                mContactHasChanged = true;
-            }
-        });
+        try {
+            mPhoto.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    trySelector();
+                    mContactHasChanged = true;
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         setUpSpinner();
-
-
     }
 
     private void setUpSpinner() {
-
         ArrayAdapter spinner = ArrayAdapter.createFromResource(this, R.array.arrayspinner, android.R.layout.simple_spinner_item);
         spinner.setDropDownViewResource(android.R.layout.simple_dropdown_item_1line);
         mSpinner.setAdapter(spinner);
@@ -116,7 +129,6 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
                         mType = ProfileContract.ContactEntry.TYPEOFCONTACT_HOME;
                     } else if (selection.equals(getString(R.string.workphone))) {
                         mType = ProfileContract.ContactEntry.TYPEOFCONTACT_WORK;
-
                     } else {
                         mType = ProfileContract.ContactEntry.TYPEOFCONTACT_PERSONAL;
                     }
@@ -126,7 +138,6 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
                 mType = ProfileContract.ContactEntry.TYPEOFCONTACT_PERSONAL;
-
             }
         });
     }
@@ -155,7 +166,7 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
     }
 
     @Override
-    public void onRequestPermissionsResult(int requestCode,  String[] permissions,  int[] grantResults) {
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         switch (requestCode) {
             case 1:
                 if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
@@ -180,8 +191,8 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menueditor, menu);
         return true;
-
     }
+
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         // because we want to hide delete option when we are adding a new contact
@@ -193,57 +204,39 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
         return true;
     }
 
-
-
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-
         switch (item.getItemId()) {
-
             case R.id.action_save:
                 saveContact();
                 if (hasAllRequiredValues == true) {
                     finish();
                 }
                 return true;
-
             case R.id.delete:
                 showDeleteConfirmationDialog();
                 return true;
-
             case android.R.id.home:
                 if (!mContactHasChanged) {
-
                     // we will be displayed a dialog asking us to discard or keeping editing when we press back in case
                     // we have not finished filling up some field
-
                     NavUtils.navigateUpFromSameTask(profileEdit.this);
                     return true;
-
                 }
-
                 DialogInterface.OnClickListener discardButton = new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         NavUtils.navigateUpFromSameTask(profileEdit.this);
-
                     }
                 };
                 showUnsavedChangesDialog(discardButton);
                 return true;
-
-
-
         }
         return super.onOptionsItemSelected(item);
     }
 
-
-
     private boolean saveContact() {
-
         // last step of this activity we have to create savecontact method
-
         String name = mNameEditText.getText().toString().trim();
         String email = mEmailEditText.getText().toString().trim();
         String phone = mNumberEditText.getText().toString().trim();
@@ -252,23 +245,16 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
         // when fields are empty
         if (mCurrentContactUri == null && TextUtils.isEmpty(name)
                 && TextUtils.isEmpty(email) && TextUtils.isEmpty(phone) && mType == ProfileContract.ContactEntry.TYPEOFCONTACT_PERSONAL && mPhotoUri == null) {
-
             hasAllRequiredValues = true;
             return hasAllRequiredValues;
-
         }
-
         ContentValues values = new ContentValues();
-
         if (TextUtils.isEmpty(name)) {
             Toast.makeText(this, "Name is Required", Toast.LENGTH_SHORT).show();
             return hasAllRequiredValues;
-
-
         } else {
             values.put(ProfileContract.ContactEntry.COLUMN_NAME, name);
         }
-
         if (TextUtils.isEmpty(email)) {
             Toast.makeText(this, "Email is Required", Toast.LENGTH_SHORT).show();
             return hasAllRequiredValues;
@@ -287,10 +273,13 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
             values.put(ProfileContract.ContactEntry.COLUMN_PHONENUMBER, phone);
         }
 
-        // optional values
-
-        values.put(ProfileContract.ContactEntry.COLUMN_TYPEOFCONTACT, mType);
-        values.put(ProfileContract.ContactEntry.COLUMN_PICTURE, mPhotoUri.toString());
+        try {
+            // optional values
+            values.put(ProfileContract.ContactEntry.COLUMN_TYPEOFCONTACT, mType);
+            values.put(ProfileContract.ContactEntry.COLUMN_PICTURE, mPhotoUri.toString());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
         if (mCurrentContactUri == null) {
 
@@ -339,7 +328,7 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
     }
 
     @Override
-    public void onLoadFinished( Loader<Cursor> loader, Cursor cursor) {
+    public void onLoadFinished(Loader<Cursor> loader, Cursor cursor) {
         if (cursor == null || cursor.getCount() < 1) {
             return;
         }
@@ -378,15 +367,13 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
                     mSpinner.setSelection(0);
 
 
-
-
             }
 
         }
     }
 
     @Override
-    public void onLoaderReset( Loader<Cursor> loader) {
+    public void onLoaderReset(Loader<Cursor> loader) {
 
         mNumberEditText.setText("");
         mNameEditText.setText("");
@@ -394,11 +381,7 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
         mPhoto.setImageResource(R.drawable.photo);
 
 
-
     }
-
-
-
 
 
     private void showUnsavedChangesDialog(
@@ -467,12 +450,23 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
             // Show a toast message depending on whether or not the delete was successful.
             if (rowsDeleted == 0) {
                 // If no rows were deleted, then there was an error with the delete.
-                Toast.makeText(this, getString(R.string.editor_delete_product_failed),
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.editor_delete_product_failed), Toast.LENGTH_SHORT).show();
             } else {
                 // Otherwise, the delete was successful and we can display a toast.
-                Toast.makeText(this, getString(R.string.editor_delete_product_successful),
-                        Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, getString(R.string.editor_delete_product_successful), Toast.LENGTH_SHORT).show();
+
+                // Building the notification
+                String notificationText = "Profile ID: " + rowsDeleted + " is Deleted";
+                Log.d("Notification", notificationText);
+                NotificationCompat.Builder builder = new NotificationCompat.Builder(profileEdit.this, "Profile Updates");
+                builder.setContentTitle("Profile Deleted");
+                builder.setContentText(notificationText);
+                builder.setSmallIcon(R.drawable.ic_launcher_background);
+                builder.setAutoCancel(true);
+
+                // Sending the notification
+                NotificationManagerCompat managerCompat = NotificationManagerCompat.from(profileEdit.this);
+                managerCompat.notify(1, builder.build());
             }
         }
 

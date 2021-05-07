@@ -291,8 +291,7 @@
     <string name="save">save</string>
     <string name="tasks">taska</string>
     <string name="prfiletextview">TextView</string>
-
-
+    <string name="notification">Notification</string>
 
 
 </resources>

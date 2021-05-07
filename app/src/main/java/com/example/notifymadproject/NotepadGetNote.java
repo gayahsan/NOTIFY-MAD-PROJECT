@@ -1,14 +1,16 @@
 package com.example.notifymadproject;
 
-import androidx.appcompat.app.AppCompatActivity;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
-import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.NotificationCompat;
+import androidx.core.app.NotificationManagerCompat;
 
 import java.util.Calendar;
 
@@ -24,6 +26,12 @@ public class NotepadGetNote extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_notepad_get_note);
+
+        // Build a notification channel
+        NotificationChannel channel;
+        channel = new NotificationChannel("Notepad Updates", "Notepad Updates", NotificationManager.IMPORTANCE_DEFAULT);
+        NotificationManager manager = getSystemService(NotificationManager.class);
+        manager.createNotificationChannel(channel);
 
         nTitle = findViewById(R.id.txtNoteTitle);
         nDetails = findViewById(R.id.txtNoteField);
@@ -56,6 +64,18 @@ public class NotepadGetNote extends AppCompatActivity {
             note.setTitle(nTitle.getText().toString());
             note.setContent(nDetails.getText().toString());
             int id = db.editNote(note);
+
+            // Building the notification
+            String notificationText = "Edited Note ID: " + note.getId() + " as: " + note.getTitle();
+            NotificationCompat.Builder builder = new NotificationCompat.Builder(NotepadGetNote.this, "Notepad Updates");
+            builder.setContentTitle("Note Updated");
+            builder.setContentText(notificationText);
+            builder.setSmallIcon(R.drawable.ic_launcher_background);
+            builder.setAutoCancel(true);
+
+            // Sending the notification
+            NotificationManagerCompat managerCompat = NotificationManagerCompat.from(NotepadGetNote.this);
+            managerCompat.notify(1, builder.build());
         } else {
             Toast.makeText(this,"Title cannot be blank...", Toast.LENGTH_SHORT).show();
         }
