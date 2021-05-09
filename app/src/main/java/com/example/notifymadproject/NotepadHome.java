@@ -26,6 +26,7 @@ public class NotepadHome extends AppCompatActivity {
     String notesCount, notesPercentage;
     double percentage;
     TextView notesCountView, notesPercentageView;
+    int notesCountInt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,6 +45,7 @@ public class NotepadHome extends AppCompatActivity {
 
         // Getting notes count from the database
         notesCount = "Notes count: " + db.getNoteCount();
+        notesCountInt = db.getNoteCount();
 
         // Linking with XML
         recyclerView = findViewById(R.id.listOfNotes);
@@ -59,6 +61,14 @@ public class NotepadHome extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         notesCountView.setText(notesCount);
         notesPercentageView.setText(notesPercentage);
+    }
+
+    protected int checkFreeStorageFull(int notesCountInt, double percentage) {
+        if (notesCountInt == 10 && percentage == 100.0) {
+            return 1;
+        } else {
+            return 0;
+        }
     }
 
     public void intentToEdit(View view) { // Add note
