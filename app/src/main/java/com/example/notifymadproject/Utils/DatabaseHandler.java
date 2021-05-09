@@ -10,7 +10,7 @@ import com.example.notifymadproject.Model.ToDoModel;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//this is TodoListDataBase
 public class DatabaseHandler extends SQLiteOpenHelper {
 
     private static final int VERSION = 1;
