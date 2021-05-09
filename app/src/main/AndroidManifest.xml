@@ -5,7 +5,7 @@
     <!--DB permisson From Gaya-->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
+    <uses-permission android:name="android.permission.ACCESS_ALL_DOWNLOADS"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
     <application
@@ -26,11 +26,11 @@
             </intent-filter>
         </activity>
 
+
         <provider
             android:authorities="com.example.notifymadproject"
             android:name=".ProfileProvider"
             android:exported="false" />
-
         <activity android:name=".ActivityReminder_01" />
         <activity android:name=".profileHome" /> <!-- Starting of Bhashana -->
         <activity android:name=".NotepadHome">

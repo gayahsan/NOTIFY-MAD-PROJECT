@@ -88,7 +88,7 @@ public class profileEdit extends AppCompatActivity implements LoaderManager.Load
 
             } else {
                 setTitle("Edit a Contact");
-                // getLoaderManager().initLoader(LOADER, null, this);
+                 //getLoaderManager().initLoader(LOADER, null, this);
 
             }
             mNameEditText.setOnTouchListener(mOnTouchListener);

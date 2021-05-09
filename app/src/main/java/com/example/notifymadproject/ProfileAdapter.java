@@ -2,7 +2,7 @@ package com.example.notifymadproject;
 
 import android.content.Context;
 import android.database.Cursor;
-import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class ProfileAdapter extends CursorAdapter {
-
+    private static final int PERMISSION_REQUEST_CODE = 1;
 
     public ProfileAdapter(Context context, Cursor cursor) {
         super(context, cursor, 0);
@@ -31,7 +31,7 @@ public class ProfileAdapter extends CursorAdapter {
         emailView = view.findViewById(R.id.textEmail);
         numberView = view.findViewById(R.id.textNumber);
         typeofContactView = view.findViewById(R.id.textTypeofContact);
-        // mContactImageView = view.findViewById(R.id.imageContact);
+         mContactImageView = view.findViewById(R.id.imageContact);
         /// geting position of views
         int name = cursor.getColumnIndex(ProfileContract.ContactEntry.COLUMN_NAME);
         int email = cursor.getColumnIndex(ProfileContract.ContactEntry.COLUMN_EMAIL);
@@ -43,26 +43,19 @@ public class ProfileAdapter extends CursorAdapter {
         String contactemail = cursor.getString(email);
         String contactnumber = cursor.getString(number);
         String contactpicture = cursor.getString(picture);
+        Log.d("TAG1",contactname);
         String typeof = cursor.getString(type);
-        try {
-            Uri imageUri = Uri.parse(contactpicture);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+       // Uri imageUri = Uri.parse("https://homepages.cae.wisc.edu/~ece533/images/airplane.png");
+
+     System.out.println(contactname);
+
 
         nameView.setText(contactname);
         numberView.setText(contactnumber);
         typeofContactView.setText(typeof);
         emailView.setText(contactemail);
-//        try {
-//
-//            mContactImageView.setImageURI(imageUri);
-//
-//        } catch (Exception e) {
-//
-//            e.printStackTrace();
-//
-//        }
+      // mContactImageView.setImageURI(imageUri);
+
 
     }
 }
